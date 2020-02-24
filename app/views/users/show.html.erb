@@ -1,7 +1,14 @@
 <h1>WELCOME TO THE USER DASHBOARD</h1>
 
+<%= @user. %>
+<%= @user.username %>
 <%= @user.email %>
+<%= @user.items.count "| Tools am sharen"%>
+
 <br>
 <br>
+
 <h3>Please fully update your user profile in order to lend and borrow tools</h3>
 <%= link_to 'Change Profile Information', edit_user_registration_path %>
+
+</div>
