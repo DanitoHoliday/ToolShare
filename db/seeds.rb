@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Creating tools.."
+
+Tool.create(name: "Hammer", description: "It's fantastic", user_id: 2)
+Tool.create(name: "Waffle iron", description: "Great stuff", user_id: 3)
+
+puts "Done"
