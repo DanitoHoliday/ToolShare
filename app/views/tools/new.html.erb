@@ -1,0 +1,8 @@
+<h1>Tools#new</h1>
+<p>Find me in app/views/tools/new.html.erb</p>
+
+<%= simple_form_for([@tool]) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: 'btn btn-info' %>
+<% end %>

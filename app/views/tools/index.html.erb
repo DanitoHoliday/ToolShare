@@ -1,0 +1,12 @@
+<h1>Tools#index</h1>
+<p>Find me in app/views/tools/index.html.erb</p>
+
+<div>
+  <ul class="index-list">
+    <%@tools.each do |tool| %>
+      <li id="card-text"><h2 id="card-title"><%= link_to tool.name, tool_path(tool)%></h2></li>
+    <%end%>
+    </ul>
+</div>
+
+
