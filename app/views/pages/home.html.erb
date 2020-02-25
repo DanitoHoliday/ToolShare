@@ -6,7 +6,7 @@
 
 
 <p>banner</p>
-<!-- banner -->
+<!-- banner: outside of the div!!!!!! -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);">
   <div class="container">
     <h1>Sharing is caring</h1>
@@ -28,9 +28,12 @@
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
 
   <p>buttons</p>
-  <!-- buttons -->
+  <!-- text buttons -->
   <%= link_to "Learn more", "#", class: "btn btn-green" %>
   <%= link_to "Rent Tool", "#", class: "btn btn-corale" %>
+  <!-- icon buttons: delete & edit -->
+  <%= link_to ('<i class="fas fa-trash"></i>').html_safe, "#", class: "btn btn-icon" %>
+  <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, "#", class: "btn btn-icon" %>
 
 
   <p>grid cards with card category</p>
@@ -63,7 +66,7 @@
 
 </div>
 
-<!-- footer -->
+<!-- footer: outside of the div!!!!!! -->
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>

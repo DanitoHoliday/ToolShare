@@ -25,3 +25,20 @@
   opacity: 1.1;
   color: $white-smoke;
 }
+
+.btn-icon {
+ width: 40px;
+ border-radius: 50%;
+ color: $ash-black;
+ background: $middle-light-grey;
+ border: 1px solid #9f9f9f;
+ font-weight: lighter;
+ opacity: 0.8;
+ transition: opacity 0.3s ease;
+}
+
+.btn-icon:hover {
+  opacity: 1;
+}
+
+
