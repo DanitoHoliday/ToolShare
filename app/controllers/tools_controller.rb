@@ -27,11 +27,13 @@ class ToolsController < ApplicationController
   end
 
   def update
-    @tool.update
+    @tool.update(tool_params)
+    redirect_to tool_path(@tool)
   end
 
   def destroy
     @tool.destroy
+    redirect_to tools_path
   end
 
   private
@@ -41,6 +43,6 @@ class ToolsController < ApplicationController
   end
 
   def tool_params
-    params.require(:tool).permit(:name, :description, :user_id)
+    params.require(:tool).permit(:name, :description, :user_id, :photo)
   end
 end
