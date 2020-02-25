@@ -1,6 +1,34 @@
 <h1>Tools#show</h1>
 <p>Find me in app/views/tools/show.html.erb</p>
 
-<%= @tool.name %>
-<%= @tool.description %>
-<%= @tool.user.email %>
+<h4><%= @tool.name %></h4>
+<div>
+  Desrciption:
+  <%= @tool.description %>
+</div>
+<div>
+  User email:
+  <%= @tool.user.email %>
+</div>
+
+<div class="my-3">
+  <% if @booked %>
+    <span class="text-success">Avaliable</span>
+    <i class="far fa-check-circle text-success"></i>
+    <span>not avaliable</span>
+    <i class="far fa-times-circle"></i>
+  <% else %>
+    <span >Avaliable</span>
+    <i class="far fa-check-circle"></i>
+    <span class="text-danger">not avaliable</span>
+    <i class="far fa-times-circle text-danger"></i>
+  <% end %>
+</div>
+
+<%= simple_form_for [@tool, @reservation]  do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, class: 'btn btn-info' %>
+<% end %>
+
+
