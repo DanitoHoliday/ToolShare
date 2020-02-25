@@ -1,25 +1,27 @@
 .btn-green {
-  color: white;
+  color: $white-smoke;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #6BC490;
+  background: $sea-green;
+  opacity: 0.9;
   transition: background 0.3s ease;
 }
 
 .btn-green:hover {
-  background: #5dad7d;
-  color: white;
+  opacity: 1.1;
+  color: $white-smoke;
 }
 
 .btn-corale {
-  color: white;
+  color: $white-smoke;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #f46e61;
+  background: $corale;
+  opacity: 0.9;
   transition: background 0.3s ease;
 }
 
 .btn-corale:hover {
-  background: #d86156;
-  color: white;
+  opacity: 1.1;
+  color: $white-smoke;
 }
