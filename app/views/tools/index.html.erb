@@ -2,16 +2,19 @@
 
 <h1>All tools</h1>
 
-<div>
-  <ul class="index-list">
+<div class="container">
     <%@tools.each do |tool| %>
-      <li id="card-text"><h2 id="card-title"><%= link_to tool.name, tool_path(tool)%></h2>
-        <%= link_to "Remove", tool_path(tool), :class => "btn btn-flat", :method => :delete %></li>
+  <div class="cards">
+    <div>
+      <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill, class: "card-category"%>
+      <%= link_to tool.name, tool_path(tool)%>
+      <%= link_to "Remove", tool_path(tool), method: :delete %>
+    </div>
     <%end%>
-    </ul>
-</div>
+  </div>
 
-<%= link_to "Offer new tool", new_tool_path, :class => "btn btn-flat", :method => :get %>
+
+<%= link_to "Offer new tool", new_tool_path, :class => "btn btn-green", :method => :get %>
 
 </div>
 

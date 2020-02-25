@@ -2,6 +2,10 @@
 
 <h1><%= @tool.name %></h1>
 
+<% unless @tool.photo.attached? == false %>
+  <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
+<%end%>
+
 <%= @tool.description %>
 <%= @tool.user.email %>
 
