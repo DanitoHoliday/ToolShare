@@ -3,14 +3,13 @@
 <h1>All tools</h1>
 
 <div class="container">
-    <%@tools.each do |tool| %>
   <div class="cards">
-    <div>
-      <%= cl_image_tag tool.photo.key, height: 300, width: 400, crop: :fill, class: "card-category"%>
+    <%@tools.each do |tool| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :fill%>')">
       <%= link_to tool.name, tool_path(tool)%>
       <%= link_to "Remove", tool_path(tool), method: :delete %>
     </div>
-    <%end%>
+<%end%>
   </div>
 
 
