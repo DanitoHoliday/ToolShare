@@ -1,8 +1,12 @@
-<h1>Tools#new</h1>
-<p>Find me in app/views/tools/new.html.erb</p>
+<div class="container">
 
 <%= simple_form_for([@tool]) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit, class: 'btn btn-info' %>
 <% end %>
+
+<%= link_to "Go back", tools_path, :class => "btn btn-flat", :method => :get %>
+
+</div>

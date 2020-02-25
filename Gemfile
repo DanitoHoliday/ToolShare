@@ -16,6 +16,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 # To authenticate users and registration
+gem 'dotenv-rails', groups: [:development, :test]
+# storing secret keys for cloudinary (?)
 
 group :development do
   gem 'web-console', '>= 3.3.0'

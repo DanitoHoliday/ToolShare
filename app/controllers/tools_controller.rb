@@ -26,11 +26,13 @@ class ToolsController < ApplicationController
   end
 
   def update
-    @tool.update
+    @tool.update(tool_params)
+    redirect_to tool_path(@tool)
   end
 
   def destroy
     @tool.destroy
+    redirect_to tools_path
   end
 
   private

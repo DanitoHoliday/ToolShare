@@ -1,6 +1,11 @@
-<h1>Tools#show</h1>
-<p>Find me in app/views/tools/show.html.erb</p>
+<div class="container">
 
-<%= @tool.name %>
+<h1><%= @tool.name %></h1>
+
 <%= @tool.description %>
 <%= @tool.user.email %>
+
+<%= link_to "Edit", edit_tool_path, :class => "btn btn-flat", :method => :get %>
+<%= link_to "Go back", tools_path, :class => "btn btn-flat", :method => :get %>
+
+</div>
