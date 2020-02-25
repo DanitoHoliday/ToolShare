@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
+gem 'faker'
 # To authenticate users and registration
 gem 'dotenv-rails', groups: [:development, :test]
 # storing secret keys for cloudinary (?)
