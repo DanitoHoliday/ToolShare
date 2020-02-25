@@ -13,11 +13,10 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
     @tool = Tool.new(tool_params)
-    @tool.user = @user
+    @tool.user = current_user
     if @tool.save
-      redirect_to user_path(@user)
+      redirect_to tool_path(@tool)
     else
       render :template => 'user/show'
     end
@@ -27,9 +26,11 @@ class ToolsController < ApplicationController
   end
 
   def update
+    @tool.update
   end
 
   def destroy
+    @tool.destroy
   end
 
   private
@@ -39,6 +40,6 @@ class ToolsController < ApplicationController
   end
 
   def tool_params
-    params.require(:tool).permit(:name, :description)
+    params.require(:tool).permit(:name, :description, :user_id)
   end
 end
