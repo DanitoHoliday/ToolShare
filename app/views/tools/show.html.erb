@@ -1,15 +1,29 @@
-<div class="container">
-
-<h1><%= @tool.name %></h1>
-
-<% unless @tool.photo.attached? == false %>
-  <%= cl_image_tag @tool.photo.key, height: 300, width: 400, crop: :fill %>
-<%end%>
-
-<%= @tool.description %>
-<%= @tool.user.email %>
-
-<%= link_to "Edit", edit_tool_path, :class => "btn btn-flat", :method => :get %>
-<%= link_to "Go back", tools_path, :class => "btn btn-flat", :method => :get %>
-
+<h4><%= @tool.name %></h4>
+<div>
+  Desrciption:
+  <%= @tool.description %>
 </div>
+<div>
+  User email:
+  <%= @tool.user.email %>
+</div>
+
+<div class="my-3">
+  <% if @booked %>
+    <span class="text-success">Avaliable</span>
+    <i class="far fa-check-circle text-success"></i>
+    <span>not avaliable</span>
+    <i class="far fa-times-circle"></i>
+  <% else %>
+    <span >Avaliable</span>
+    <i class="far fa-check-circle"></i>
+    <span class="text-danger">not avaliable</span>
+    <i class="far fa-times-circle text-danger"></i>
+  <% end %>
+</div>
+
+<%= simple_form_for [@tool, @reservation]  do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, class: 'btn btn-info' %>
+<% end %>
