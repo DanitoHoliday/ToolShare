@@ -1,13 +1,47 @@
 <div class="container">
-  <h1>WELCOME TO THE USER DASHBOARD</h1>
+  <h1 id="headerdash">DASHBOARD</h1>
 
-  <%= @user.username %>
-  <%= @user.email %>
-  <br>
+
   <br>
 
-  <h3>Please fully update your user profile in order to lend and borrow tools</h3>
-  <%= link_to 'Change Profile Information', edit_user_registration_path %>
+  <div class="welcome-container">
+    <h2>Welcome</h2>
+    <% if @user.username.present? %>
+      <h4> <%= @user.username %> </h4>
+     <p> <%= link_to 'Change Profile Information', edit_user_registration_path %> </p>
+    <% else %>
+     <h4> <%= @user.email %> </h4>
+     <p> <%= link_to 'Change Profile Information', edit_user_registration_path %> </p>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="tools-container">
+    <h4>Your shared Tools</h4>
+    <% if @user.username.present? %>
+      <% @user.tools.each do |my_tools| %>
+        <% if my_tools.photo.attached?  %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path my_tools.photo.key, height: 300, width: 400, crop: :fill%>')">
+          <%= link_to my_tools.name, tool_path(my_tools), :style => "color: white"%>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+       <h3>Please fully update your user profile in order to lend and borrow tools</h3>
+     <p> <%= link_to 'Change Profile Information', edit_user_registration_path %> </p>
+    <% end %>
+  </div>
+
+<div class="reservation-container">
+  <h4>Your borrowed Tools</h4>
+  <% if @user.reservations_as_owner == [] %>
+    <h5> No borrowed tools </h5>
+  <% else %>
+    <h5> Here are you borrowed tools </h5>
+  <% end %>
+</div>
+
 
   </div>
 </div>
