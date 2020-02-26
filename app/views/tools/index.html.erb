@@ -1,17 +1,20 @@
 <div class="container">
 
-  <%= form_tag tools_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a tool"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+<form action="/tools" accept-charset="UTF-8" method="get">
+  <div class="search-form-control form-group mt-5">
+    <input name="utf8" type="hidden" value="✓">
+    <input type="text" name="query" id="query" value="" class="form-control string required" placeholder="Find a tool">
+    <button type="submit" name="commit" value="Search" class="btn btn-green" data-disable-with="Search">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+</form>
+
 
   <div class="d-flex justify-content-between mb-3 mt-5">
     <h1>All tools</h1>
-    <%= link_to "Offer new tool", new_tool_path, :class => "btn btn-green", :method => :get %>
+    <div><%= link_to "Offer new tool", new_tool_path, :class => "btn btn-green", :method => :get %>
+    </div>
   </div>
   <div class="cards">
     <%@tools.each do |tool| %>
