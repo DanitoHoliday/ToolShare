@@ -1,0 +1,119 @@
+
+
+<h3>Design Components</h3>
+
+
+<p>banner</p>
+<!-- banner: outside of the container div!!!!!! -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);">
+  <div class="container">
+    <h1>Sharing is caring</h1>
+    <p>Lend tools that you don't need regularly. </p>
+    <p>Borrow tools you don't own.</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <p>
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+  </p>
+
+  <p>avatar</p>
+  <!-- Avatar -->
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+  <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+
+  <p>buttons</p>
+  <!-- text buttons -->
+  <%= link_to "Learn more", "#", class: "btn btn-green" %>
+  <%= link_to "Rent Tool", "#", class: "btn btn-corale" %>
+  <!-- icon buttons: delete & edit -->
+  <%= link_to ('<i class="fas fa-trash"></i>').html_safe, "#", class: "btn btn-icon" %>
+  <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, "#", class: "btn btn-icon" %>
+
+
+  <p>grid cards with card category for the "index"</p>
+  <!-- grid cards: please use this one for the index! -->
+    <div class="cards">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        <!-- for an example how to implenent a cloudinary picture in the url please take a look in app/views/tools/index.html.erb -->
+        Driller
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1575908393823-8e6ee16403d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Hammer
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1572336124661-f84d79b15136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Waffle iron
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Driller
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1575908393823-8e6ee16403d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Hammer
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1572336124661-f84d79b15136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Waffle iron
+      </div>
+    </div>
+
+  <p>boxgrid with box-category for the "show"</p>
+
+    <div class="box-wrapper">
+
+      <div class="box-responsive">
+        <div class="box-r-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)"></div>
+        <div class="box-r-text">
+          <h2>title HERE</h2>
+          <table class="box-table">
+            <tr>
+              <th>Owner:</th>
+              <td>REPLACE</td>
+            </tr>
+            <tr>
+              <th>Availability:</th>
+              <td>REPLACE</td>
+            </tr>
+          </table>
+          <%= link_to "Rent me", "#", class: "btn btn-green btn-box" %>
+        </div>
+      </div>
+
+      <div class="box-fix">
+        <div class="box-f-text">
+          <h3>Description:</h3>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+
+    </div>
+
+
+  <p>search form
+  <!-- searching tools -->
+  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <div class="search-form-control form-group">
+      <input class="form-control string required" type="text" name="search[query]" id="search_query" />
+      <button name="button" type="submit" class="btn btn-green">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+  <% end %>
+
+</div>
+
+<!-- footer: outside of the container div!!!!!! -->
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Made with <i class="fas fa-heart"></i>
+  </div>
+</div>
+
