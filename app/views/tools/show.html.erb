@@ -105,6 +105,24 @@
             <%= f.input :end_date %>
             <%= f.button :submit, class: 'btn btn-green text-center', 'data-toggle' => "modal", 'data-target' => "#exampleModalLong" %>
           <% end %>
+        <% else %>
+         <span class="text-success">Reservation was successfull!</span><br>
+            <span>
+              You have reservated the <%= @tool.name %> for
+              <strong><%= (@tool.reservations.last.end_date - @tool.reservations.last.start_date).to_i %> days</strong>
+            </span><br>
+
+            <span>
+              Pick-up
+              <strong>
+                <%= (@tool.reservations.last.start_date - Date.today).to_i == 0  ? 'today' : "in #{(@tool.reservations.last.start_date - Date.today).to_i} days."%>
+              </strong>
+            </span><br>
+
+            <span>
+              Pick-up in
+              <strong><%= (@tool.reservations.last.end_date - Date.today).to_i %> days</strong>
+            </span>
         <% end %>
       </div>
 

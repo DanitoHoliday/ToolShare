@@ -13,12 +13,14 @@ class ReservationsController < ApplicationController
     if @reservation.save
       @tool.booked = true
       @tool.save
+
       redirect_to @tool
 
     else
       render :template => 'tool/show'
     end
   end
+
 
   private
 
