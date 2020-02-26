@@ -2,7 +2,11 @@ class ToolsController < ApplicationController
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
-    @tools = Tool.all
+    if params[:query].present?
+      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @tools = Tool.all
+    end
   end
 
   def show

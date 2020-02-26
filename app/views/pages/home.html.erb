@@ -60,27 +60,35 @@
     </div>
 
   <p>boxgrid with box-category for the "show"</p>
-    <!-- grid cards: please use this one for the show! -->
-    <div class="boxes">
-        <div class="box-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
-        </div>
-        <div class="box-text">
-          <h3>REPLACE title HERE</h3>
-          <table>
+
+    <div class="box-wrapper">
+
+      <div class="box-responsive">
+        <div class="box-r-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)"></div>
+        <div class="box-r-text">
+          <h2>title HERE</h2>
+          <table class="box-table">
             <tr>
               <th>Owner:</th>
-              <td>PLEASE REPLACE</td>
+              <td>REPLACE</td>
             </tr>
             <tr>
               <th>Availability:</th>
-              <td>PLEASE REPLACE</td>
+              <td>REPLACE</td>
             </tr>
           </table>
-            <h3>Description:</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></td>
+          <%= link_to "Rent me", "#", class: "btn btn-green btn-box" %>
         </div>
-    </div>
+      </div>
 
+      <div class="box-fix">
+        <div class="box-f-text">
+          <h3>Description:</h3>
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+
+    </div>
 
 
   <p>search form
