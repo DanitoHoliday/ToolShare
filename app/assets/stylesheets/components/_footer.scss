@@ -1,5 +1,5 @@
 .footer {
-  background: $middle-light-grey;
+  background: #e6e6e6;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -13,7 +13,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: $ash-black;
+  color: #30332E;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
@@ -23,5 +23,5 @@
   opacity: 1;
 }
 .footer .fa-heart {
-  color: $corale;
+  color: #f46e61;
 }

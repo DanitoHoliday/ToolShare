@@ -21,6 +21,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 # storing secret keys for cloudinary (?)
 gem 'cloudinary', '~> 1.12.0'
 #for image hosting
+gem 'pg_search', '~> 2.3.0'
+#include search function
 
 group :development do
   gem 'web-console', '>= 3.3.0'
