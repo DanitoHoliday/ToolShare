@@ -11,15 +11,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
-        <li class="nav-item responsive active">
-          <%= link_to "Dashboard", user_path(current_user), class: "nav-link" %>
-        </li>
 
         <li class="nav-item responsive active">
           <%= link_to "Tools", tools_path, class: "nav-link" %>
         </li>
 
       <% if user_signed_in? %>
+
+        <li class="nav-item responsive active">
+          <%= link_to "Dashboard", user_path(current_user), class: "nav-link" %>
+        </li>
 
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
