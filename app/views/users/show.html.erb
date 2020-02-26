@@ -1,13 +1,58 @@
 <div class="container">
-  <h1>WELCOME TO THE USER DASHBOARD</h1>
 
-  <%= @user.username %>
-  <%= @user.email %>
-  <br>
   <br>
 
-  <h3>Please fully update your user profile in order to lend and borrow tools</h3>
-  <%= link_to 'Change Profile Information', edit_user_registration_path %>
+  <div class="welcome-container">
+    <h1>Welcome</h1>
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
 
+    <% if @user.username.present? %>
+      <h3> <%= @user.username %> </h3>
+     <p class="text-center"> <%= link_to 'Edit Profile', edit_user_registration_path %> </p>
+    <% else %>
+     <h4> <%= @user.email %> </h4>
+     <p class="text-center"> <%= link_to 'Edit Profile', edit_user_registration_path %> </p>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="tools-container cards">
+    <h4>Your shared Tools</h4>
+    <% if @user.username.present? %>
+      <% @user.tools.each do |my_tools| %>
+        <% if my_tools.photo.attached?  %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path my_tools.photo.key, height: 300, width: 400, crop: :fill%>')">
+          <%= link_to my_tools.name, tool_path(my_tools), :style => "color: white"%>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+       <h3>Please fully update your user profile in order to lend and borrow tools</h3>
+     <p> <%= link_to 'Change Profile Information', edit_user_registration_path %> </p>
+    <% end %>
+  </div>
+
+  <div class="reservation-container">
+    <br>
+    <h4>Your borrowed Tools</h4>
+    <% if @user.reservations_as_owner == [] %>
+      <h5> No borrowed tools </h5>
+    <% else %>
+      <div class="cards">
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+          Driller
+        </div>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1575908393823-8e6ee16403d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+          Hammer
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <br>
+
+  <div class="text-center">
+    <%= link_to "Back to Home", root_path, class: "btn btn-green" %>
   </div>
 </div>
