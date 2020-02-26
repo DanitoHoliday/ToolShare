@@ -6,7 +6,7 @@
 
 
 <p>banner</p>
-<!-- banner -->
+<!-- banner: outside of the container div!!!!!! -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);">
   <div class="container">
     <h1>Sharing is caring</h1>
@@ -28,29 +28,62 @@
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
 
   <p>buttons</p>
-  <!-- buttons -->
+  <!-- text buttons -->
   <%= link_to "Learn more", "#", class: "btn btn-green" %>
   <%= link_to "Rent Tool", "#", class: "btn btn-corale" %>
+  <!-- icon buttons: delete & edit -->
+  <%= link_to ('<i class="fas fa-trash"></i>').html_safe, "#", class: "btn btn-icon" %>
+  <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, "#", class: "btn btn-icon" %>
 
 
-  <p>grid cards with card category</p>
-  <!-- grid cards -->
+  <p>grid cards with card category for the "index"</p>
+  <!-- grid cards: please use this one for the index! -->
     <div class="cards">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
         Driller
       </div>
-
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1575908393823-8e6ee16403d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
         Hammer
       </div>
-
-<!--       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1572336124661-f84d79b15136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1572336124661-f84d79b15136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
         Waffle iron
-      </div> -->
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Driller
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1575908393823-8e6ee16403d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Hammer
+      </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1572336124661-f84d79b15136?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        Waffle iron
+      </div>
+    </div>
+
+  <p>boxgrid with box-category for the "show"</p>
+    <!-- grid cards: please use this one for the show! -->
+    <div class="boxes">
+        <div class="box-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1504148455328-c376907d081c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60)">
+        </div>
+        <div class="box-text">
+          <h3>REPLACE title HERE</h3>
+          <table>
+            <tr>
+              <th>Owner:</th>
+              <td>PLEASE REPLACE</td>
+            </tr>
+            <tr>
+              <th>Availability:</th>
+              <td>PLEASE REPLACE</td>
+            </tr>
+          </table>
+            <h3>Description:</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p></td>
+        </div>
     </div>
 
 
-  <p>search form</p>
+
+  <p>search form
   <!-- searching tools -->
   <%= simple_form_for :search, url: root_path, method: :get do |f| %>
     <div class="search-form-control form-group">
@@ -63,7 +96,7 @@
 
 </div>
 
-<!-- footer -->
+<!-- footer: outside of the container div!!!!!! -->
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
