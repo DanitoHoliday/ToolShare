@@ -1,30 +1,42 @@
-<h4><%= @tool.name %></h4>
+<div class="container mt-4">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @tool.photo.key, height: 300, width: 400, crop: :fill, class: 'card-category'%>')"></div>
 
-<div>
-  Desrciption:
-  <%= @tool.description %>
-</div>
-<div>
-  User email:
-  <%= @tool.user.email %>
-</div>
+    <h4 class="border-bottom my-4 pb-2"><%= @tool.name %></h4>
+    <div>
+      <strong>Desrciption:</strong>
+      <p>
+        <%= @tool.description %>
+      </p>
+    </div>
+    <div>
+      <strong>Tool owner</strong>
+      <p>
+        <%= @tool.user.email %>
+      </p>
+    </div>
 
-<div class="my-3">
-  <% if @booked %>
-    <span class="text-success">Avaliable</span>
-    <i class="far fa-check-circle text-success"></i>
-    <span>not avaliable</span>
-    <i class="far fa-times-circle"></i>
-  <% else %>
-    <span >Avaliable</span>
-    <i class="far fa-check-circle"></i>
-    <span class="text-danger">not avaliable</span>
-    <i class="far fa-times-circle text-danger"></i>
-  <% end %>
-</div>
+    <div class="my-3">
+      <% if @tool.booked %>
+        <span class="text-danger">
+          not avaliable
+          <i class="far fa-times-circle"></i>
+        </span>
+      <% else %>
+        <span class="text-success">
+        Avaliable
+        <i class="far fa-check-circle "></i>
+      </span>
+      <% end %>
+    </div>
 
-<%= simple_form_for [@tool, @reservation]  do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit, class: 'btn btn-info' %>
-<% end %>
+    <% if !@tool.booked %>
+      <%= simple_form_for [@tool, @reservation]  do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.button :submit, class: 'btn btn-info' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- render '/reservations/modal' -->
+
