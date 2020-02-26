@@ -6,7 +6,9 @@
 // Define fonts for body and headers
 $body-font: "Asap", "Helvetica", "sans-serif";
 $headers-font: "Questrial", "Helvetica", "sans-serif";
-
+$h1: 24px;
+$h2: 20px;
+$h3: 16px;
 
 // makes sense for general padding/margin on a page, button-padding, font size etc.
 
@@ -15,10 +17,21 @@ p {
 }
 
 
-
 p .text-bigger {
   font-size: 20px;
   font-family: $headers-font;
+}
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
 }
 
 // To use a font file (.woff) uncomment following lines
