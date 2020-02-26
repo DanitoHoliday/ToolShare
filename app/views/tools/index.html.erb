@@ -1,20 +1,23 @@
 <div class="container">
 
-<h1>All tools</h1>
+  <%= form_tag tools_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a tool"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
-<div class="container">
+  <div class="d-flex justify-content-between mb-3 mt-5">
+    <h1>All tools</h1>
+    <%= link_to "Offer new tool", new_tool_path, :class => "btn btn-green", :method => :get %>
+  </div>
   <div class="cards">
     <%@tools.each do |tool| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :fill%>')">
-      <%= link_to tool.name, tool_path(tool)%>
-      <%= link_to "Remove", tool_path(tool), method: :delete %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path tool.photo.key, height: 300, width: 400, crop: :fill%>')">
+      <%= link_to tool.name, tool_path(tool), :style => "color: white"%>
     </div>
-<%end%>
+    <%end%>
   </div>
-
-
-<%= link_to "Offer new tool", new_tool_path, :class => "btn btn-green", :method => :get %>
-
 </div>
-
-

@@ -14,6 +14,13 @@ p {
   text-align: justify;
 }
 
+
+
+p .text-bigger {
+  font-size: 20px;
+  font-family: $headers-font;
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
