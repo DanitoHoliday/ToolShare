@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :tools
   has_many :reservations_as_owner, through: :tools, source: :reservations
   has_one_attached :photo
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

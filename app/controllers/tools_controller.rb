@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :home, :index ]
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -6,6 +7,14 @@ class ToolsController < ApplicationController
       @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
     else
       @tools = Tool.all
+    end
+
+    users = @tools.map { |tool| tool.user}
+    @markers = users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
     end
   end
 
