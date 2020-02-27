@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:show]
   root to: 'pages#home'
+  get 'components',         to: 'pages#components',    as: :components
   resources :search, only: [:index]
   resources :tools do
     resources :reservations, only: [:create, :new]

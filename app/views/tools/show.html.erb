@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<!-- <div class="container mt-4">
   <% if @tool.photo.attached? %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @tool.photo.key, height: 300, width: 400, crop: :fill, class: 'card-category'%>')"></div>
     <% end %>
@@ -35,10 +35,98 @@
       <%= simple_form_for [@tool, @reservation]  do |f| %>
         <%= f.input :start_date %>
         <%= f.input :end_date %>
-        <%= f.button :submit, class: 'btn btn-info' %>
+        <%= f.button :submit, class: 'btn btn-info', 'data-toggle' => "modal", 'data-target' => "#exampleModalLong" %>
+      <% end %>
+    <% else %>
+      Reservation was successfull! <br>
+      Start date:
+      <% @tool.reservations.each do |res| %>
+        you have res:
+        <p><%= (res.end_date - res.start_date).to_i %></p>
+        pick
+        <p><%= (res.start_date - Date.today).to_i %></p>
+        return
+        <p><%= (res.end_date - Date.today).to_i %></p>
       <% end %>
     <% end %>
-  </div>
+  </div> -->
 
-  <!-- render '/reservations/modal' -->
+
+
+
+
+
+
+
+<div class="box-wrapper container">
+
+      <div class="box-responsive">
+        <% if @tool.photo.attached? %>
+          <div class="box-r-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @tool.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
+        <% end %>
+
+        <div class="box-r-text">
+          <h2><%= @tool.name %></h2>
+          <table class="box-table">
+            <tr>
+              <th>Owner:</th>
+              <td><%= @tool.user.email %></td>
+            </tr>
+            <tr>
+              <th>Availability:</th>
+              <td>
+                <% if @tool.booked %>
+                  <span class="text-danger">
+                    not avaliable
+                    <i class="far fa-times-circle"></i>
+                  </span>
+                <% else %>
+                  <span class="text-success">
+                    Avaliable
+                    <i class="far fa-check-circle "></i>
+                  </span>
+                <% end %>
+              </td>
+            </tr>
+          </table>
+          <% link_to "Rent me", "#", class: "btn btn-green btn-box" %>
+        </div>
+      </div>
+
+      <div class="box-fix">
+        <div class="box-f-text">
+          <h3>Description:</h3>
+          <p><%= @tool.description %></p>
+        </div>
+
+        <% if !@tool.booked %>
+          <%= simple_form_for [@tool, @reservation]  do |f| %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+            <%= f.button :submit, class: 'btn btn-green text-center', 'data-toggle' => "modal", 'data-target' => "#exampleModalLong" %>
+          <% end %>
+        <% else %>
+         <span class="text-success">Reservation was successfull!</span><br>
+            <span>
+              You have reservated the <%= @tool.name %> for
+              <strong><%= (@tool.reservations.last.end_date - @tool.reservations.last.start_date).to_i %> days</strong>
+            </span><br>
+
+            <span>
+              Pick-up
+              <strong>
+                <%= (@tool.reservations.last.start_date - Date.today).to_i == 0  ? 'today' : "in #{(@tool.reservations.last.start_date - Date.today).to_i} days."%>
+              </strong>
+            </span><br>
+
+            <span>
+              Pick-up in
+              <strong><%= (@tool.reservations.last.end_date - Date.today).to_i %> days</strong>
+            </span>
+        <% end %>
+      </div>
+
+    </div>
+
+
 
