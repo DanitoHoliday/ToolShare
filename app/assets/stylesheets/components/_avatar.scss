@@ -2,10 +2,14 @@
   width: 40px;
   border-radius: 50%;
 }
+
 .avatar-large {
-  width: 56px;
+&:hover { opacity: 1.0; }
+  opacity: 0.8;
+  width: 75px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;

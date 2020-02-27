@@ -4,7 +4,8 @@
 
   <div class="welcome-container">
     <h1>Welcome</h1>
-      <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+
+      <%= cl_image_tag @user.photo.key, class: "avatar-large" %>
 
     <% if @user.username.present? %>
       <h3> <%= @user.username %> </h3>
