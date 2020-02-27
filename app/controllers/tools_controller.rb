@@ -8,10 +8,20 @@ class ToolsController < ApplicationController
     else
       @tools = Tool.all
     end
+
+    users = @tools.map { |tool| tool.user}
+    @markers = users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def show
     @reservation = Reservation.new
+    # user = @tool.user
+    # @markers = user(lat: user.latitude, lng: user.longitude)
   end
 
   def new

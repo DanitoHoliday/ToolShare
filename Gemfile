@@ -25,6 +25,8 @@ gem 'cloudinary', '~> 1.12.0'
 #for image hosting
 gem 'pg_search', '~> 2.3.0'
 #include search function
+gem 'geocoder'
+#include geo coding functionality for tools - where are they? connect users address
 
 group :development do
   gem 'web-console', '>= 3.3.0'
