@@ -1,24 +1,27 @@
 <!-- Modal -->
-<!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h6 class="modal-title text-success" id="exampleModalLongTitle">Your reservation was successful!</h6>
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body ">
-        Start date: <br>
-        <%=  %>
-
+      <div class="modal-body mb-5">
+        <div class="container">
+          <div class="box-responsive">
+            <p>Please select dates:</p>
+          </div>
+          <%= simple_form_for [@tool, @reservation]  do |f| %>
+            <%= f.input :start_date, as: :string, input_html: {class: 'datepickr'} %>
+            <%= f.input :end_date, as: :string, input_html: {class: 'datepickr'} %>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
-        <%= link_to @tool, 'type' => "button", 'class' => 'btn btn-secondary', 'data-dismiss' => "modal" %>
-
+      <div class="modal-footer py-5">
+            <%= f.button :submit, class: 'btn btn-green btn-block' %>
+          <% end %>
       </div>
     </div>
   </div>
-</div> -->
-
+</div>

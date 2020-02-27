@@ -11,24 +11,25 @@
           <th>Owner:</th>
           <td><%= @tool.user.email %></td>
         </tr>
-        <tr>
-          <th>Availability:</th>
-          <td>
-            <% if @tool.booked %>
-              <span class="text-danger">
-                not avaliable
-                <!-- <i class="far fa-times-circle"></i> -->
-              </span>
-            <% else %>
-              <span class="text-success">
-                Avaliable
-                <!-- <i class="far fa-check-circle "></i> -->
-              </span>
-            <% end %>
-          </td>
-        </tr>
+        <% if @tool.user != current_user%>
+          <tr>
+
+            <td>
+              <% if @tool.booked %>
+                <%# if @tool.reservations.last.user != current_user %>
+                  <p class="bold">Availability:</p class="bold">
+                  <span class="text-danger">not available</span>
+                <%# end %>
+              <% else %>
+                  <%# if @tool.reservations.last.user != current_user %>
+                    <p class="bold">Availability:</p class="bold">
+                    <span class="text-success">Available</span>
+                  <%# end %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
       </table>
-      <% link_to "Rent me", "#", class: "btn btn-green btn-box" %>
     </div>
   </div>
 
@@ -37,35 +38,16 @@
       <h3>Description:</h3>
       <p><%= @tool.description %></p>
     </div>
-
-    <% if !@tool.booked %>
-      <%= simple_form_for [@tool, @reservation]  do |f| %>
-        <%= f.input :start_date, as: :string, input_html: {class: 'datepickr'} %>
-        <%= f.input :end_date, as: :string, input_html: {class: 'datepickr'} %>
-        <%= f.button :submit, class: 'btn btn-green btn-block', 'data-toggle' => "modal", 'data-target' => "#exampleModalLong" %>
-      <% end %>
-    <% else %>
-     <span class="text-success">Reservation was successfull!</span><br>
-        <span>
-          You have reservated the <%= @tool.name %> for
-          <strong><%= (@tool.reservations.last.end_date - @tool.reservations.last.start_date).to_i %> days</strong>
-        </span><br>
-
-        <span>
-          Pick-up
-          <strong>
-            <%= (@tool.reservations.last.start_date - Date.today).to_i == 0  ? 'today' : "in #{(@tool.reservations.last.start_date - Date.today).to_i} days."%>
-          </strong>
-        </span><br>
-
-        <span>
-          Return in
-          <strong><%= (@tool.reservations.last.end_date - Date.today).to_i %> days</strong>
-        </span>
-    <% end %>
   </div>
 
+  <% if !@tool.booked && @tool.user != current_user %>
+    <button type="button" class="btn btn-green btn-block" data-toggle="modal" data-target="#exampleModal">
+      Rent Tool
+    </button>
+  <% end %>
 </div>
+
+<%= render '/reservations/modal' %>
 
 
 

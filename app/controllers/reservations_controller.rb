@@ -2,23 +2,30 @@ class ReservationsController < ApplicationController
   before_action :set_tool, only: [:new, :create]
 
   def new
-    # @reservation = Reservation.new
+    @reservation = Reservation.new
+    authorize @reservation
   end
 
   def create
-    # @reservation = @tool.reservations.create(reservation_params)
     @reservation = Reservation.new(reservation_params)
     @reservation.tool = @tool
+    authorize @reservation
     @reservation.user = current_user
+
     if @reservation.save
       @tool.booked = true
       @tool.save
-
-      redirect_to @tool
-
+      redirect_to @reservation
+      # render :template => 'reservations/show'
     else
-      render :template => 'tool/show'
+      render 'tool/show'
     end
+  end
+
+  def show
+    @reservation = Reservation.find(params[:id])
+    # raise
+    authorize @reservation
   end
 
 

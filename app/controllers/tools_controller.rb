@@ -1,26 +1,30 @@
 class ToolsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :home, :index ]
+  skip_before_action :authenticate_user!, only: [ :home, :index, :show ]
   before_action :set_tool, only: [:show, :edit, :update, :destroy]
 
   def index
     if params[:query].present?
-      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+      @tools = policy_scope(Tool).where("name ILIKE ?", "%#{params[:query]}%")
     else
-      @tools = Tool.all
+      @tools = policy_scope(Tool)
     end
   end
 
   def show
     @reservation = Reservation.new
+    authorize @tool
   end
 
   def new
     @tool = Tool.new
+    authorize @tool
   end
 
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
+    # raise
+    authorize @tool
     if @tool.save
       redirect_to tool_path(@tool)
     else
