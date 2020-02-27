@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tools
   has_many :reservations_as_owner, through: :tools, source: :reservations
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
