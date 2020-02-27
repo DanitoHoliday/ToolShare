@@ -50,6 +50,10 @@ GEM
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.1)
     cloudinary (1.12.0)
@@ -77,6 +81,7 @@ GEM
     ffi (1.12.2)
     font-awesome-sass (5.6.1)
       sassc (>= 1.11)
+    geocoder (1.6.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     http-accept (1.7.0)
@@ -114,6 +119,7 @@ GEM
     pg_search (2.3.2)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
+    popper_js (1.16.0)
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -221,11 +227,13 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootsnap
+  bootstrap (~> 4.3.1)
   cloudinary (~> 1.12.0)
   devise
   dotenv-rails
   faker
   font-awesome-sass (~> 5.6.1)
+  geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)

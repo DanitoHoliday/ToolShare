@@ -7,6 +7,8 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.4.1'
 gem 'redis'
+gem 'bootstrap', '~> 4.3.1'
+# Anouk: not completely sure if the bootstrap is the right version!
 
 
 gem 'autoprefixer-rails'
@@ -25,6 +27,8 @@ gem 'cloudinary', '~> 1.12.0'
 #for image hosting
 gem 'pg_search', '~> 2.3.0'
 #include search function
+gem 'geocoder'
+#include geo coding functionality for tools - where are they? connect users address
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -38,3 +42,4 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
 end
+
