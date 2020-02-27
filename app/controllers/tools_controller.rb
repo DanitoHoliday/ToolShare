@@ -20,6 +20,8 @@ class ToolsController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    # user = @tool.user
+    # @markers = user(lat: user.latitude, lng: user.longitude)
   end
 
   def new

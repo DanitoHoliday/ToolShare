@@ -5,4 +5,15 @@ class Tool < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search,
     against: [:name]
+
+  before_create :add_default_photo
+
+
+private
+
+def add_default_photo
+  unless photo.attached?
+    self.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpeg")), filename: 'default.jpg' , content_type: "image/jpeg")
+  end
+end
 end

@@ -8,8 +8,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 flatpickr('.datepickr', {
   altInput: true,
-  disableMobile: "true",
-
-})
+  disableMobile: "true"
+});
 
 initMapbox();
