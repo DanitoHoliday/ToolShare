@@ -4,10 +4,12 @@
 }
 
 .avatar-large {
-&:hover { opacity: 1.0; }
   opacity: 0.8;
-  width: 75px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  object-fit: contain;
+  background-size: crop;
 }
 
 .avatar-bordered {
