@@ -24,6 +24,8 @@
   <!-- Avatar -->
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
   <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+  <!-- help: for changing a pic from our database to an avatar, use:  cl_image_tag @user.photo.key, class: "avatar-large" -->
+  <!-- and wrap this in pe-tags! -->
 
   <p>buttons</p>
   <!-- text buttons -->
@@ -32,6 +34,8 @@
   <!-- icon buttons: delete & edit -->
   <%= link_to ('<i class="fas fa-trash"></i>').html_safe, "#", class: "btn btn-icon" %>
   <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, "#", class: "btn btn-icon" %>
+  <%= link_to ('<i class="fas fa-arrow-circle-left"></i>').html_safe, "#", class: "btn-back" %>
+
 
 
   <p>grid cards with card category for the "index"</p>
@@ -104,7 +108,7 @@
 </div>
 
 <!-- footer: outside of the container div!!!!!! -->
-<div class="footer">
+<!-- <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -115,5 +119,5 @@
   <div class="footer-copyright">
     Made with <i class="fas fa-heart"></i>
   </div>
-</div>
+</div> -->
 
