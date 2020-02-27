@@ -8,17 +8,21 @@ $body-font: "Asap", "Helvetica", "sans-serif";
 $headers-font: "Questrial", "Helvetica", "sans-serif";
 $h1: 24px;
 $h2: 20px;
-$h3: 8px;
+$h3: 18px;
+$p: 18px;
+$button-font-weight: 500;
+$button-font-size: 18px;
 
 // makes sense for general padding/margin on a page, button-padding, font size etc.
 
 p {
   text-align: justify;
+  font-size: $p;
 }
 
 
 p .text-bigger {
-  font-size: 20px;
+  font-size: 22px;
   font-family: $headers-font;
 }
 

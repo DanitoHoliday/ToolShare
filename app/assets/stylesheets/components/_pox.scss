@@ -8,6 +8,8 @@
   color: $background-color;
 }
 
+$box-table-font-size: 20px;
+
 .box-table table {
   padding: 0.5rem;
   margin-top: 10px;
@@ -16,10 +18,12 @@
 
 .box-table td {
  padding-left: 20px;
+ font-size: $box-table-font-size;
 }
 
 .box-table th {
   vertical-align: top;
+  font-size: $box-table-font-size;
 }
 
 .btn-box {
