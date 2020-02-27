@@ -5,7 +5,8 @@
     <% end %>
 
     <div class="box-r-text">
-      <h2 class="border-bottom pb-2 mb-4"><%= @reservation.tool.name %></h2>
+      <h2><%= @reservation.tool.name %></h2>
+      <h5 class="text-success border-bottom pb-2 mb-4">Successful reserved!</h5>
 
       <div>
         <h5 class="">Owner details</h5>
@@ -30,40 +31,15 @@
             <span >Total reserved days:</span><br>
           </div>
           <div>
-            <span><%= @reservation.end_date %></span><br>
-            <span><%= @reservation.end_date %></span><br>
-            <span><%= @reservation.end_date %></span><br>
+            <span><%= @reservation.start_date.to_formatted_s(:rfc822)%></span><br>
+            <span><%= @reservation.end_date.to_formatted_s(:rfc822) %></span><br>
+            <span><%= (@reservation.end_date - @reservation.start_date).to_i %></span><br>
           </div>
         </div>
       </div>
-
-
-      <!-- <table class="box-table">
-        <strong>Owner:</strong><br>
-        <span><%= @reservation.tool.user.email %></span>
-        <p class="text-success">
-          <i class="far fa-check-circle"></i>
-          Your reservation was successfull placed
-        </p>
-
-        <tr>
-          <th>Owner:</th>
-          <td><%= @reservation.tool.user.email %></td>
-        </tr>
-        <tr>
-          <th>Address:</th>
-          <td><%= @reservation.tool.user.email %></td>
-        </tr>
-        <tr>
-          <th>Pick-up date:</th>
-          <td><%= @reservation.tool.user.email %></td>
-        </tr>
-        <tr>
-          <th>Return date:</th>
-          <td><%= @reservation.tool.user.email %></td>
-        </tr>
-      </table> -->
     </div>
   </div>
+
+  <%= link_to 'Back to tools', tools_path, class: 'btn btn-green btn-block my-4 ' %>
 
 </div>

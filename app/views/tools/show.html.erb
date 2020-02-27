@@ -6,37 +6,22 @@
 
     <div class="box-r-text">
       <h2><%= @tool.name %></h2>
-      <table class="box-table">
-        <tr>
-          <th>Owner:</th>
-          <td><%= @tool.user.email %></td>
-        </tr>
-        <% if @tool.user != current_user%>
-          <tr>
 
-            <td>
-              <% if @tool.booked %>
-                <%# if @tool.reservations.last.user != current_user %>
-                  <p class="bold">Availability:</p class="bold">
-                  <span class="text-danger">not available</span>
-                <%# end %>
-              <% else %>
-                  <%# if @tool.reservations.last.user != current_user %>
-                    <p class="bold">Availability:</p class="bold">
-                    <span class="text-success">Available</span>
-                  <%# end %>
-              <% end %>
-            </td>
-          </tr>
+      <h5 class="text-success">
+        <% if @tool.booked %>
+          <span class="text-danger">Not available</span>
+        <% else %>
+          <span class="text-success">Available</span>
         <% end %>
-      </table>
-    </div>
-  </div>
+      </h5>
 
-  <div class="box-fix">
-    <div class="box-f-text">
-      <h3>Description:</h3>
-      <p><%= @tool.description %></p>
+      <div class="d-flex border-bottom pb-2 mb-4">
+        <h5>Owner:</h5>
+        <span class="ml-4"><%= @tool.user.email %></span>
+      </div>
+
+       <h4>Description:</h4>
+       <p><%= @tool.description %></p>
     </div>
   </div>
 
@@ -45,6 +30,8 @@
       Rent Tool
     </button>
   <% end %>
+
+  <%= link_to 'Back to tools', tools_path, class: 'btn btn-secondary btn-block' %>
 </div>
 
 <%= render '/reservations/modal' %>
