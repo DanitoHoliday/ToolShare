@@ -13,7 +13,7 @@ private
 
 def add_default_photo
   unless photo.attached?
-    self.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "default.jpeg")), filename: 'default.jpg' , content_type: "image/jpeg")
+    self.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "hands.png")), filename: 'default.jpg' , content_type: "image/jpeg")
   end
 end
 end
