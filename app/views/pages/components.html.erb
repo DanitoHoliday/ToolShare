@@ -27,15 +27,14 @@
   <!-- help: for changing a pic from our database to an avatar, use:  cl_image_tag @user.photo.key, class: "avatar-large" -->
   <!-- and wrap this in pe-tags! -->
 
+
+
   <p>buttons</p>
   <!-- text buttons -->
   <%= link_to "Learn more", "#", class: "btn btn-green" %>
   <%= link_to "Rent Tool", "#", class: "btn btn-corale" %>
-  <!-- icon buttons: delete & edit -->
-  <%= link_to ('<i class="fas fa-trash"></i>').html_safe, "#", class: "btn btn-icon" %>
-  <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, "#", class: "btn btn-icon" %>
-  <%= link_to ('<i class="fas fa-arrow-circle-left"></i>').html_safe, "#", class: "btn-back" %>
 
+  <%= link_to (image_tag "back-btn.png", alt: "alttext", class: "btn-go-back"), "#" %>
 
 
   <p>grid cards with card category for the "index"</p>
@@ -70,10 +69,12 @@
         <div>
           <h1>Title here</h1>
         </div>
-        <h2 class="card-info-location">location</h2>
+        <h2 class="card-info-location">REPLACE <%= image_tag "pin.png", alt: "alttext", class: "card-pin-icon"%></h2>
       </div>
     </div>
   </div>
+
+
 
 
   <p>boxgrid with box-category for the "show"</p>
@@ -120,6 +121,14 @@
   <% end %>
 
 </div>
+
+<!--
+fontawesome icons/buttons, that don't work
+icon buttons: delete & edit
+  <%= link_to ('<i class="fas fa-trash"></i>').html_safe, "#", class: "btn btn-icon" %>
+  <%= link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, "#", class: "btn btn-icon" %>
+  <%= link_to ('<i class="fas fa-arrow-circle-left"></i>').html_safe, "#", class: "btn-back" %>
+-->
 
 <!-- footer: outside of the container div!!!!!! -->
 <!-- <div class="footer">
