@@ -1,0 +1,45 @@
+<div class="box-wrapper container" >
+  <div class="box-responsive">
+    <% if @reservation.tool.photo.attached? %>
+      <div class="box-r-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @reservation.tool.photo.key, height: 300, width: 400, crop: :fill %>')"></div>
+    <% end %>
+
+    <div class="box-r-text">
+      <h2><%= @reservation.tool.name %></h2>
+      <h5 class="text-success border-bottom pb-2 mb-4">Successful reserved!</h5>
+
+      <div>
+        <h5 class="">Owner details</h5>
+        <div class="d-flex text-secondary mb-4">
+          <div class="w-50">
+            <span>Name:</span><br>
+            <span >Address:</span><br>
+            <span >Phone:</span><br>
+          </div>
+          <div>
+            <span><%= @reservation.tool.user.email %></span><br>
+            <span>Mitte - Berlin</span><br>
+            <span>+49 152 144 52 298</span><br>
+          </div>
+        </div>
+
+        <h5 class="">Reservation details</h5>
+        <div class="d-flex text-secondary">
+          <div class="w-50">
+            <span>Pick-up date:</span><br>
+            <span >Return date:</span><br>
+            <span >Total reserved days:</span><br>
+          </div>
+          <div>
+            <span><%= @reservation.start_date.to_formatted_s(:rfc822)%></span><br>
+            <span><%= @reservation.end_date.to_formatted_s(:rfc822) %></span><br>
+            <span><%= (@reservation.end_date - @reservation.start_date).to_i %></span><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to 'Back to tools', tools_path, class: 'btn btn-green btn-block my-4 ' %>
+
+</div>
