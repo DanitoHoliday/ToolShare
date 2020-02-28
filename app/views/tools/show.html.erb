@@ -9,7 +9,17 @@
 
       <h5 class="text-success">
         <% if @tool.booked %>
-          <span class="text-danger">Not available</span>
+          <% @tool.reservations.each do |res| %>
+            <% if current_user && res.user_id == current_user.id %>
+              <span class="text-danger">
+                Alredy reserved by you from: <br>
+                <%= res.start_date.to_formatted_s(:rfc822) %>
+                - <%= res.end_date.to_formatted_s(:rfc822) %>
+              </span>
+            <% else %>
+              <span class="text-danger">Not available</span>
+            <% end %>
+          <% end %>
         <% else %>
           <span class="text-success">Available</span>
         <% end %>
