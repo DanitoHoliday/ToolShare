@@ -5,11 +5,11 @@
   <div class="welcome-container">
     <h1>Welcome</h1>
 
-    <% unless current_user.photo.attached? %>
+<!--     <% unless current_user.photo.attached? %>
       <%= image_tag("149995.svg", class: "avatar-large") %>
     <% else %>
       <%= cl_image_tag current_user.photo.key, style: "width: 100px;height:100px; border-radius:50%" %>
-    <% end %>
+    <% end %> -->
 
     <h3> <%= @user.username %> </h3>
     <p class="text-center"> <%= link_to 'Edit Profile', edit_user_registration_path %> </p>
@@ -19,31 +19,16 @@
 
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item w-50 text-center" style="color: black; border: 1px solid lightgrey;">
-      <a class="nav-link active" style="color: black;" data-toggle="tab" href="#my-tools" role="tab">My Tools</a>
+      <a class="nav-link active" data-toggle="tab" style="color: black;" href="#my-res" role="tab">My Reservations</a>
     </li>
     <li class="nav-item w-50 text-center" style="color: black; border: 1px solid lightgrey;">
-      <a class="nav-link" data-toggle="tab" style="color: black;" href="#my-res" role="tab">My Res</a>
+      <a class="nav-link" style="color: black;" data-toggle="tab" href="#my-tools" role="tab">My Tools</a>
     </li>
   </ul>
 
   <div class="tab-content">
 
-    <div class="tab-pane active" id="my-tools" role="tabpanel" >
-      <div class="tools-container cards">
-        <h4>Your shared Tools</h4>
-        <% if @user.username.present? %>
-          <% @user.tools.each do |my_tools| %>
-            <% if my_tools.photo.attached?  %>
-              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path my_tools.photo.key, height: 300, width: 400, crop: :fill%>')">
-                <%= link_to my_tools.name, tool_path(my_tools), :style => "color: white"%>
-              </div>
-            <% end %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="tab-pane" role="tabpanel" id="my-res">
+    <div class="tab-pane active" id="my-res" role="tabpanel" >
       <div class="reservation-container">
         <br>
         <h4>Your borrowed Tools</h4>
@@ -58,6 +43,22 @@
         <% end %>
       </div>
     </div>
+
+    <div class="tab-pane" id="my-tools" role="tabpanel" >
+      <div class="tools-container cards">
+        <h4>Your shared Tools</h4>
+        <% if @user.username.present? %>
+          <% @user.tools.each do |my_tools| %>
+            <% if my_tools.photo.attached?  %>
+              <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path my_tools.photo.key, height: 300, width: 400, crop: :fill%>')">
+                <%= link_to my_tools.name, tool_path(my_tools), :style => "color: white"%>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
   <br>
