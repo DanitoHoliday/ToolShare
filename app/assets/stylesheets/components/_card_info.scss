@@ -1,0 +1,35 @@
+.card-info {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+
+}
+
+.card-info > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-info h1 {
+  font-size: $h1;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-info h2 {
+  font-size: $h2;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-info .card-info-details {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+
