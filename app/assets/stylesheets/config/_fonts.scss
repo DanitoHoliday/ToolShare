@@ -6,16 +6,17 @@
 // Define fonts for body and headers
 $body-font: "Asap", "Helvetica", "sans-serif";
 $headers-font: "Questrial", "Helvetica", "sans-serif";
-$h1: 24px;
-$h2: 20px;
-$h3: 18px;
-$p: 18px;
+$h1: 26px;
+$h2: 24px;
+$h3: 22px;
+$h4: 22px;
+$p: 20px;
 $button-font-weight: 500;
 $button-font-size: 18px;
 
 // makes sense for general padding/margin on a page, button-padding, font size etc.
 
-p {
+p, li {
   text-align: justify;
   font-size: $p;
 }
