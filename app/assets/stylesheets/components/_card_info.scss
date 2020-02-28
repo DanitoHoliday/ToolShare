@@ -28,8 +28,14 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   position: relative;
 }
+
+.card-pin-icon {
+ width: 20px;
+ margin-bottom: 4px;
+}
+
 
 
