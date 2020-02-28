@@ -2,23 +2,28 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1580893246395-52aead8960dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);">
   <div class="container">
-    <h1 id="landing-page">Tool Share</h1>
+    <h1 id="landing-page">ToolShare</h1>
 
-    <h4>You need a tool for an occasional use? <h4>
-    <p> Borrow tools on Tool Share you don't own.</p>
+    <h3>Sharing is caring<h3>
+      <br>
+    <p>Borrow and lend your tools!</p>
 
-    <h4> You own a tool you rarely use?</h4>
-    <p> Perfect! Rent it out on Tool Share!</p>
+    <form id="banner-form" action="/tools" accept-charset="UTF-8" method="get">
+      <div class="search-form-control form-group mt-5">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="text" name="query" id="query" value="" class="form-control string required" placeholder="Find a tool">
+        <button type="submit" name="commit" value="Search all tools" class="btn btn-corale" data-disable-with="Search">
+        <i class="fas fa-search"></i> Search
+        </button>
+      </div>
+    </form>
 
-    <div class="container btn-banner" style="margin-top: 260px;">
+    <div class="container" style="margin-top: 100px;"></div>
+
+    <div class="banner-btn">
+    <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-green" %>
     </div>
-    <br>
-    <div class="container btn-banner" style="margin-top: 20px;">
-      <%= link_to "Overview of Tools", tools_path, class: "btn btn-green text-align" %>
-    </div>
-    <div class="container btn-banner" style="margin-top: 20px;">
-      <%= link_to "Sign-up", new_user_registration_path, class: "btn btn-green text-align" %>
-    </div>
+
   </div>
 </div>
 
