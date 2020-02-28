@@ -14,7 +14,7 @@ User.destroy_all
 
 puts "Creating admin"
 
-x = User.create(username: "admin", email: "admin@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "10117 Berlin")
+x = User.create(username: "admin", email: "admin@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Friedrichshain")
 
 puts "Admin-Username | #{x.username}"
 puts "Admin-Email    | #{x.email}"
@@ -84,7 +84,7 @@ puts ".."
 puts "Creating more users and tools.."
 
 
-andy = User.create(username: "Andy", email: "andy@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Friedenstraße 94 a, 10249 Berlin")
+andy = User.create(username: "Andy", email: "andy@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Kreuzberg")
 
     tool = Tool.new(name: "Hammer", description: "High quality hammer with extra grip for everyone who wants to hang some pictures", user_id: andy.id)
     tool.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "hammer.jpg")), filename: 'hammer.jpg', content_type: 'image/jpg')
@@ -99,7 +99,7 @@ andy = User.create(username: "Andy", email: "andy@gmail.com", password: "123456"
 
 ######################
 
-leon = User.create(username: "Leon", email: "leon@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Friedrichstraße 43-45, 10117 Berlin")
+leon = User.create(username: "Leon", email: "leon@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Neukölln")
 
     tool = Tool.new(name: "Waffle Maker", description: "The best waffle maker out there! My Grandmother made with this Waffle maker the best waffles ever", user_id: leon.id)
     tool.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "waffle.jpg")), filename: 'waffle.jpg', content_type: 'image/jpg')
@@ -110,7 +110,7 @@ leon = User.create(username: "Leon", email: "leon@gmail.com", password: "123456"
 
 ###################
 
-toni = User.create(username: "Toni", email: "toni@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "10407 Berlin")
+toni = User.create(username: "Toni", email: "toni@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Mitte Berlin")
 
     tool = Tool.new(name: "Mixer", description: "Bake a cake or cake a bake, whatever you cake or bake this mixer helps caking and baking", user_id: toni.id)
     tool.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "mixer.jpg")), filename: 'mixer.jpg', content_type: 'image/jpg')
@@ -120,13 +120,23 @@ toni = User.create(username: "Toni", email: "toni@gmail.com", password: "123456"
 
 ######################
 
-kaylin = User.create(username: "Kaylin", email: "kaylin@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Altenbraker Str. 1, 12053 Berlin")
+kaylin = User.create(username: "Kaylin", email: "kaylin@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Schöneberg")
 
     tool = Tool.new(name: "Tent", description: "Weekend Trip? Wedding? Party? This tent is perfect for almost all occations. Easy to build up and weather resistance!", user_id: kaylin.id)
     tool.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "tent.jpg")), filename: 'tent.jpg', content_type: 'image/jpg')
     tool.save
     puts "Tool Tent created"
 
+
+#########################
+
+
+yann = User.create(username: "Yann", email: "leon@gmail.com", password: "123456", phone_number: "+49 151 1337 1338", address: "Tempelhof")
+
+    tool = Tool.new(name: "Waffle Maker", description: "The best waffle maker out there! My Grandmother made with this Waffle maker the best waffles ever", user_id: yann.id)
+    tool.photo.attach(io: File.open(Rails.root.join("app", "assets", "images", "waffle.jpg")), filename: 'waffle.jpg', content_type: 'image/jpg')
+    tool.save
+    puts "Tool Waffle Maker created"
 
 
 # 3.times do
